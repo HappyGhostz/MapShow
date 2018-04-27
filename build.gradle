@@ -1,0 +1,48 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.2.30'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+ext{
+    compileSdkVersion = 27
+    targetSdkVersion = 27
+    //system
+    system_dependencies=[
+            support_v4         : 'com.android.support:support-v4:27.1.1',
+            appcompat_v7       : 'com.android.support:appcompat-v7:27.1.1',
+            cardview_v7        : 'com.android.support:cardview-v7:27.1.1',
+            //是一个可以从图片(Bitmap)中提取颜色的帮助类，可以使UI更加美观，根据图片动态的显示相应的颜色。
+            palette_v7         : 'com.android.support:palette-v7:27.1.1',
+            recyclerview_v7    : 'com.android.support:recyclerview-v7:27.1.1',
+            design             : 'com.android.support:design:27.1.1',
+            //它包含一系列有用的元注解，用来帮助开发者在编译期间发现可能存在的bug
+            support_annotations: 'com.android.support:support-annotations:27.1.1',
+            kotlin             : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+            system_constraint  :  'com.android.support.constraint:constraint-layout:1.1.0',
+            test_junit         : 'junit:junit:4.12',
+            android_test_runner        : 'com.android.support.test:runner:1.0.2',
+            android_test_espresso      : 'com.android.support.test.espresso:espresso-core:3.0.2'
+    ]
+}
