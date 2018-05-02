@@ -2,6 +2,7 @@
 
 buildscript {
     ext.kotlin_version = '1.2.30'
+    ext.anko_version = '0.10.5'
     repositories {
         google()
         jcenter()
@@ -51,7 +52,7 @@ ext{
     im_dependencies=[
             //Optional compile for GCM (Google Cloud Messaging).
             gms_google                : 'com.google.android.gms:play-services-gcm:10.0.0',
-            hyphenate_sdk      : 'com.hyphenate:hyphenate-sdk:3.4.0'
+            hyphenate_sdk      : 'com.hyphenate:hyphenate-sdk:3.3.0'
     ]
     function_dependencies=[
             //okhttp
@@ -63,6 +64,18 @@ ext{
             retrofit_gson      :'com.squareup.retrofit2:converter-gson:2.4.0',
             retrofit2_rxadapter    :'com.squareup.retrofit2:adapter-rxjava2:2.4.0',
             rxlifecycle        :'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1',
-            rvAdapter_helper   : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+            rvAdapter_helper   : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30',
+            // 其他依赖
+            fresco             : 'com.facebook.fresco:fresco:0.12.0',
+            // 支持 GIF 动图，需要添加
+            fresco_gif            : 'com.facebook.fresco:animated-gif:0.12.0',
+
+            // 支持 WebP （静态图+动图），需要添加
+            fresco_webp_animated: 'com.facebook.fresco:animated-webp:0.12.0',
+            fresco_webp_static  : 'com.facebook.fresco:webpsupport:0.12.0'
+
+    ]
+    anko_dependencies=[
+            anko                :  "org.jetbrains.anko:anko:$anko_version"
     ]
 }

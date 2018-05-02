@@ -15,9 +15,14 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         manifestPlaceholders = [
-                APP_KEY_BAI_DU: "DHBP2rtr3tB3SvGfIOj1qHassZUeSAo7",
-                IM_KEY: "1193180428253558#mapshow",
+                APP_KEY_BAI_DU: "Q3EhLt9UYUNq7tunKxCpQxzECMLm9p5j",
+                IM_KEY: "1193180428253558#mapshow"
         ]
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
     }
     signingConfigs {
         debug {
@@ -60,12 +65,7 @@ android {
 //            }
         }
     }
-    sourceSets{
-        main{
-            jniLibs.srcDir 'libs'
-            //说明so的路径为该libs路径，关联所有地图SDK的so文件
-        }
-    }
+
     lintOptions {
         abortOnError false
     }
@@ -119,4 +119,10 @@ dependencies {
     implementation funiction_dependencies.retrofit2_rxadapter
     implementation funiction_dependencies.rxlifecycle
     implementation funiction_dependencies.rvAdapter_helper
+    implementation funiction_dependencies.fresco
+    implementation funiction_dependencies.fresco_gif
+    implementation funiction_dependencies.fresco_webp_animated
+    implementation funiction_dependencies.fresco_webp_static
+    def anko_dependencies = rootProject.ext.anko_dependencies
+    implementation anko_dependencies.anko
 }

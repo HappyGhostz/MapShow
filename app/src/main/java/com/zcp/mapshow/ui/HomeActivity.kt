@@ -1,7 +1,8 @@
-package com.zcp.mapshow
+package com.zcp.mapshow.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.zcp.mapshow.R
 
 class HomeActivity : AppCompatActivity() {
 

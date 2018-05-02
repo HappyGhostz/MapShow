@@ -37,19 +37,22 @@
         android:name=".AppAplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/BaseTheme"
         >
-        <activity android:name=".HomeActivity">
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.HomeActivity"/>
         <!-- baidu api key-->
+        <!-- -->
         <meta-data
-            android:name="BAI_DU_API_KEY"
-            android:value="${APP_KEY_BAI_DU}" />
+            android:name="com.zcp.mapshow.API_KEY"
+            android:value="${APP_KEY_BAI_DU}"
+            />
         <!-- 设置环信应用的AppKey -->
         <meta-data android:name="EASEMOB_APPKEY"  android:value="${IM_KEY}" />
         <!-- 声明SDK所需的service SDK核心功能-->
