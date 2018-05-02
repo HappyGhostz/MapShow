@@ -15,9 +15,12 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         manifestPlaceholders = [
-                APP_KEY_BAI_DU: "Q3EhLt9UYUNq7tunKxCpQxzECMLm9p5j",
+                BAIDU_KEY: "dhNx7Pma6a9xS1Pwc2CBYZas7tSLvRjp",
                 IM_KEY: "1193180428253558#mapshow"
         ]
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86','armeabi'
+        }
     }
     sourceSets {
         main {
@@ -47,9 +50,9 @@ android {
         }
         release {
             buildConfigField "boolean", "ENABLE_DEVELOP_MODE", "false"
-            minifyEnabled true//是否混淆
+            minifyEnabled false//是否混淆
             // 移除无用的resource文件
-            shrinkResources true
+            shrinkResources false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'//引用的混淆文件
 
@@ -108,8 +111,8 @@ dependencies {
     implementation files('libs/httpmime-4.1.2.jar')
     implementation files('libs/BaiduLBS_Android.jar')
     def im_dependencies = rootProject.ext.im_dependencies
-    implementation im_dependencies.gms_google
-    implementation im_dependencies.hyphenate_sdk
+//    implementation im_dependencies.gms_google
+//    implementation im_dependencies.hyphenate_sdk
     def funiction_dependencies = rootProject.ext.function_dependencies
     implementation funiction_dependencies.okhttp
     implementation funiction_dependencies.rxjava2
@@ -125,4 +128,5 @@ dependencies {
     implementation funiction_dependencies.fresco_webp_static
     def anko_dependencies = rootProject.ext.anko_dependencies
     implementation anko_dependencies.anko
+    implementation files('libs/hyphenatechat_3.4.0.1.jar')
 }

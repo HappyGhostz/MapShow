@@ -39,6 +39,10 @@
         android:supportsRtl="true"
         android:theme="@style/BaseTheme"
         >
+        <!-- baidu api key-->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="${BAIDU_KEY}" />
         <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,12 +51,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.HomeActivity"/>
-        <!-- baidu api key-->
-        <!-- -->
-        <meta-data
-            android:name="com.zcp.mapshow.API_KEY"
-            android:value="${APP_KEY_BAI_DU}"
-            />
         <!-- 设置环信应用的AppKey -->
         <meta-data android:name="EASEMOB_APPKEY"  android:value="${IM_KEY}" />
         <!-- 声明SDK所需的service SDK核心功能-->
