@@ -1,10 +1,12 @@
 package com.zcp.mapshow.ui
 
+import android.graphics.Color
 import com.example.happyghost.showtimeforkotlin.wegit.ProgressCustomView
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.drawee.view.SimpleDraweeView
 import com.zcp.mapshow.R
 import com.zcp.mapshow.ui.base.BaseFullSceenActivity
+import com.zcp.mapshow.ui.sign.LogInActivity
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.Scheduler
@@ -12,6 +14,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_splash.*
 import org.jetbrains.anko.find
 import org.jetbrains.anko.startActivity
 import java.util.concurrent.TimeUnit
@@ -22,11 +25,19 @@ import java.util.concurrent.TimeUnit
  * @description
  */
 class SplashActivity : BaseFullSceenActivity(){
-    lateinit var downTimeView:ProgressCustomView
     var isNext = false
+    override fun initview() {
+        val splashView = find<SimpleDraweeView>(R.id.iv_spalsh)
+        val draweeController = Fresco.newDraweeControllerBuilder()
+                .setUri("res:// /" + R.mipmap.splash)
+                .setAutoPlayAnimations(true)
+                .build()
+        splashView.controller = draweeController
+    }
+
     override fun initData() {
-        downTimeView.startAnimation()
-        downTimeView.setPCviewOnClickListener(object : ProgressCustomView.PCviewOnClickListener{
+        pc_downtime.startAnimation()
+        pc_downtime.setPCviewOnClickListener(object : ProgressCustomView.PCviewOnClickListener{
             override fun onClick() {
                 nextActivity()
             }
@@ -42,7 +53,8 @@ class SplashActivity : BaseFullSceenActivity(){
                     }
 
                     override fun onNext(t: Int) {
-                        downTimeView.setmText("跳过:$t")
+                        pc_downtime.setmText("跳过:$t")
+                        pc_downtime.setmTextColor(Color.parseColor("#000000"))
                     }
 
                     override fun onError(e: Throwable) {
@@ -54,20 +66,10 @@ class SplashActivity : BaseFullSceenActivity(){
     private fun nextActivity() {
         if(!isNext){
             isNext=true
-            startActivity<HomeActivity>()
+            startActivity<LogInActivity>()
             overridePendingTransition(R.anim.fade_entry,R.anim.fade_exit)
             finish()
         }
-    }
-
-    override fun initview() {
-        downTimeView = find<ProgressCustomView>(R.id.pc_downtime)
-        val splashView = find<SimpleDraweeView>(R.id.iv_spalsh)
-        val draweeController = Fresco.newDraweeControllerBuilder()
-                .setUri("res:// /" + R.mipmap.splash)
-                .setAutoPlayAnimations(true)
-                .build()
-        splashView.controller = draweeController
     }
 
     override fun getContentView(): Int =R.layout.activity_splash

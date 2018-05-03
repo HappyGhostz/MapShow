@@ -24,7 +24,7 @@ abstract class BaseActivity :RxAppCompatActivity() {
         initData()
     }
 
-    abstract fun setFullScreenForActivity()
+    open fun setFullScreenForActivity(){}
     abstract fun getContentView(): Int
     abstract fun initview()
     abstract fun initData()

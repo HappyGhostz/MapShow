@@ -3,6 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_spalsh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     <com.example.happyghost.showtimeforkotlin.wegit.ProgressCustomView
         android:id="@+id/pc_downtime"
         android:layout_width="wrap_content"
@@ -14,9 +19,5 @@
         app:pc_arccolor="@color/colorAccent"
         app:pc_textcolor="#000000"
         app:pc_background="@android:drawable/screen_background_light_transparent"/>
-    <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/iv_spalsh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 </RelativeLayout>
