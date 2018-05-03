@@ -5,18 +5,14 @@
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:background="@mipmap/bg_login">
 
-    <com.facebook.drawee.view.SimpleDraweeView
+    <ImageView
         android:id="@+id/tab"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="126dp"
-        android:background="@null"
+        android:layout_marginTop="194dp"
         android:scaleType="fitCenter"
-        fresco:roundWithOverlayColor="@color/color_white"
-        fresco:roundedCornerRadius="10dp"
-        fresco:roundingBorderColor="#00ff00"
-        fresco:roundingBorderWidth="1dp" />
+         />
 
 </RelativeLayout>
