@@ -11,8 +11,7 @@
         android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="194dp"
-        android:scaleType="fitCenter"
-         />
+        android:layout_marginTop="120dp"
+        android:scaleType="fitCenter" />
 
 </RelativeLayout>

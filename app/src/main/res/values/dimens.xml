@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    密度:  ldpi=======mdpi=======hdpi======xhdpi=======xxhdpi=======xxxhdpi
+    密度值:120dpi    160dpi     240dpi    320dpi       480hdpi       720dpi
+    分辨率:240x320   320x480   480x800   720x1280     1080x1920    1440x2560
+    公式:  dp*dpi/160 = px。比如1dp x 320dpi/160 = 2px
+    -->
+    <dimen name="login_tab">125dp</dimen>
+</resources>
