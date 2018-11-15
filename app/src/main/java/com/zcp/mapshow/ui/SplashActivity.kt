@@ -17,6 +17,7 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_splash.*
 import org.jetbrains.anko.find
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 import java.util.concurrent.TimeUnit
 
 /**
@@ -27,12 +28,22 @@ import java.util.concurrent.TimeUnit
 class SplashActivity : BaseFullSceenActivity(){
     var isNext = false
     override fun initview() {
+
+        initPushMessage()
         val splashView = find<SimpleDraweeView>(R.id.iv_spalsh)
         val draweeController = Fresco.newDraweeControllerBuilder()
                 .setUri("res:// /" + R.mipmap.splash)
                 .setAutoPlayAnimations(true)
                 .build()
         splashView.controller = draweeController
+    }
+
+    private fun initPushMessage() {
+        val extras = intent.extras
+        if(extras!=null){
+            val get = extras.getString("message")
+            toast(get+"")
+        }
     }
 
     override fun initData() {

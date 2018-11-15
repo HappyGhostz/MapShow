@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zcp.mapshow">
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!--//获取设备网络状态，禁用后无法获取网络状态-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!--//网络权限，当禁用后，无法进行检索等相关业务-->
@@ -55,12 +56,6 @@
 
 
 
-
-
-
-
-
-
         <!-- 设置环信应用的AppKey -->
         <meta-data android:name="EASEMOB_APPKEY"  android:value="${IM_KEY}" />
         <!-- 声明SDK所需的service SDK核心功能-->
@@ -81,6 +76,13 @@
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name=".service.FcmMessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

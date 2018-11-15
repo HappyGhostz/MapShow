@@ -11,6 +11,7 @@ import com.hyphenate.chat.EMClient
 import com.hyphenate.chat.EMOptions
 import android.support.multidex.MultiDex
 import com.facebook.drawee.backends.pipeline.Fresco
+import com.google.firebase.messaging.FirebaseMessaging
 
 
 //import com.hyphenate.chat.EMClient.TAG
@@ -27,7 +28,7 @@ class AppAplication :Application(){
         //初始化Fresco
         Fresco.initialize(this)
         //初始化百度SDK
-        SDKInitializer.initialize(this)
+//        SDKInitializer.initialize(this)
         initIm()
     }
 
@@ -56,6 +57,12 @@ class AppAplication :Application(){
         EMClient.getInstance().init(this, options)
         //在做打包混淆时，关闭debug模式，避免消耗不必要的资源
         EMClient.getInstance().setDebugMode(true)
+
+        initFcm()
+    }
+
+    private fun initFcm() {
+        FirebaseMessaging.getInstance().isAutoInitEnabled = true
     }
 
     private fun getAppName(pid: Int): String? {

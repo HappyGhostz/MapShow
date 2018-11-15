@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "370370790587",
+    "firebase_url": "https://mapshow-5e33d.firebaseio.com",
+    "project_id": "mapshow-5e33d",
+    "storage_bucket": "mapshow-5e33d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370370790587:android:b9e3895ef23ca313",
+        "android_client_info": {
+          "package_name": "com.zcp.mapshow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370370790587-fgnah9j008u4rlegolhep72plk3fb1lk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn3l3rg6Zr28hwUnAZwt3T7LdPhu-u4-8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

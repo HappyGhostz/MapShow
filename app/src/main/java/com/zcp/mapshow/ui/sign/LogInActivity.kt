@@ -2,20 +2,25 @@ package com.zcp.mapshow.ui.sign
 
 import android.graphics.drawable.AnimationDrawable
 import com.zcp.mapshow.R
+import com.zcp.mapshow.ui.HomeActivity
 import com.zcp.mapshow.ui.base.BaseActivity
+import com.zcp.mapshow.ui.base.BaseFullSceenActivity
+import com.zcp.mapshow.utils.StatusBarUtil
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.backgroundDrawable
+import org.jetbrains.anko.startActivity
 
 /**
  * @author Zhao Chenping
  * @creat 2018/5/3.
  * @description
  */
-class LogInActivity:BaseActivity() {
+class LogInActivity: BaseActivity() {
 
     override fun getContentView(): Int  = R.layout.activity_login
 
     override fun initview() {
+        tv_status.height = StatusBarUtil.getStatusBarHeight(this)
         //看到一个别人实现帧动画的思路，就是将所有的图片放到arrays文件里，动态获取，然后根据
         //设置的播放时间，是否循环等条件动态设置imageView的背景，这里用到了异步线程，要考虑到内存泄漏的问题
         //https://github.com/ansen360/FrameAnimation
@@ -29,6 +34,9 @@ class LogInActivity:BaseActivity() {
 //                .setAutoPlayAnimations(true)
 //                .build()
 //        tabView.controller = builder
+        tab.setOnClickListener {
+            startActivity<HomeActivity>()
+        }
     }
 
     override fun initData() {

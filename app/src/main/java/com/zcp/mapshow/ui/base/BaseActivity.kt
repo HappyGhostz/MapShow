@@ -8,6 +8,8 @@ import android.view.View
 import android.view.WindowManager
 import com.trello.rxlifecycle2.LifecycleTransformer
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
+import com.zcp.mapshow.R
+import com.zcp.mapshow.utils.StatusBarUtil
 
 /**
  * @author Zhao Chenping
@@ -18,8 +20,9 @@ abstract class BaseActivity :RxAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setFullScreenForActivity()
         super.onCreate(savedInstanceState)
-        initStatus()
+//        initStatus()
         setContentView(getContentView())
+        StatusBarUtil.setTransparentStatus(this)
         initview()
         initData()
     }
@@ -38,14 +41,14 @@ abstract class BaseActivity :RxAppCompatActivity() {
     fun <T>bindRxLifecycle(): LifecycleTransformer<T> {
         return this.bindToLifecycle<T>()
     }
-    protected fun initStatus() {
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
-            // 部分机型的statusbar会有半透明的黑色背景
-            //设置5.0状态栏透明
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            window.statusBarColor = Color.TRANSPARENT
-        }
-    }
+//    protected fun initStatus() {
+//        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
+//            // 部分机型的statusbar会有半透明的黑色背景
+//            //设置5.0状态栏透明
+//            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+//            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+//            window.statusBarColor = Color.TRANSPARENT
+//        }
+//    }
 }

@@ -8,7 +8,7 @@ android {
     compileSdkVersion rootProject.compileSdkVersion
     defaultConfig {
         applicationId "com.zcp.mapshow"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
@@ -87,7 +87,7 @@ configurations {
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:multidex:+'
+    implementation 'com.android.support:multidex:1.0.3'
     def system_dependencies = rootProject.ext.system_dependencies
     implementation system_dependencies.support_v4
     implementation system_dependencies.recyclerview_v7
@@ -115,8 +115,9 @@ dependencies {
 //    implementation im_dependencies.hyphenate_sdk
     def funiction_dependencies = rootProject.ext.function_dependencies
     implementation funiction_dependencies.okhttp
-    implementation funiction_dependencies.rxjava2
+//    implementation funiction_dependencies.rxjava2
     implementation funiction_dependencies.rxandroid
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
     implementation funiction_dependencies.retrofit
     implementation funiction_dependencies.retrofit_gson
     implementation funiction_dependencies.retrofit2_rxadapter
@@ -129,4 +130,10 @@ dependencies {
     def anko_dependencies = rootProject.ext.anko_dependencies
     implementation anko_dependencies.anko
     implementation files('libs/hyphenatechat_3.4.0.1.jar')
+
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-iid:17.0.4'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
 }
+apply plugin: 'com.google.gms.google-services'
