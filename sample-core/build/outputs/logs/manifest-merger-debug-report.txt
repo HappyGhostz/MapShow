@@ -1,0 +1,45 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:1:1-10:12
+	package
+		ADDED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:2:5-40
+		INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+		ADDED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:1:1-10:12
+		INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+		ADDED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:1:1-10:12
+		INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:4:5-8:19
+meta-data#io.fabric.ApiKey
+ADDED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:5:9-7:72
+	android:value
+		ADDED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:7:13-69
+	android:name
+		ADDED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml:6:13-44
+uses-sdk
+INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+		ADDED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+		ADDED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\workspace\MapShow\sample-core\src\main\AndroidManifest.xml

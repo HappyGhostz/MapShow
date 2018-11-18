@@ -1,0 +1,66 @@
+ext {
+    compileSdkVersion = 27
+    targetSdkVersion = 27
+    buildToolsVersion = "27.0.3"
+    qbSdkVersion='3.8.1'
+    versionCode  = 1
+    versionName  = "1.0"
+    minSdkVersion  = 19
+    minSdkVersion  = 19
+
+    designVersion = "27.1.1"
+    robotoTextViewVersion ="4.0.0"
+    kotlin_version = "1.2.30"
+    anko_version = '0.10.5'
+    //system
+    system_dependencies=[
+            support_v4         : 'com.android.support:support-v4:27.1.1',
+            appcompat_v7       : 'com.android.support:appcompat-v7:27.1.1',
+            cardview_v7        : 'com.android.support:cardview-v7:27.1.1',
+            //是一个可以从图片(Bitmap)中提取颜色的帮助类，可以使UI更加美观，根据图片动态的显示相应的颜色。
+            palette_v7         : 'com.android.support:palette-v7:27.1.1',
+            recyclerview_v7    : 'com.android.support:recyclerview-v7:27.1.1',
+            design             : 'com.android.support:design:27.1.1',
+            //它包含一系列有用的元注解，用来帮助开发者在编译期间发现可能存在的bug
+            support_annotations: "com.android.support:support-annotations:$designVersion",
+            kotlin             : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+            system_constraint  :  'com.android.support.constraint:constraint-layout:1.1.0',
+            test_junit         : 'junit:junit:4.12',
+            android_test_runner        : 'com.android.support.test:runner:1.0.2',
+            android_test_espresso      : 'com.android.support.test.espresso:espresso-core:3.0.2'
+    ]
+    im_dependencies=[
+            //Optional compile for GCM (Google Cloud Messaging).
+            gms_google                : 'com.google.android.gms:play-services-gcm:10.0.0',
+            hyphenate_sdk      : 'com.hyphenate:hyphenate-sdk:3.3.0'
+    ]
+    function_dependencies=[
+            //okhttp
+            okhttp             :'com.squareup.okhttp3:okhttp:3.10.0',
+            //rx
+            rxjava2            :'io.reactivex.rxjava2:rxjava:2.2.3',
+            rxandroid          :'io.reactivex.rxjava2:rxandroid:2.0.2',
+            retrofit           :'com.squareup.retrofit2:retrofit:2.4.0',
+            retrofit_gson      :'com.squareup.retrofit2:converter-gson:2.4.0',
+            retrofit2_rxadapter    :'com.squareup.retrofit2:adapter-rxjava2:2.4.0',
+            rxlifecycle        :'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1',
+            rvAdapter_helper   : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30',
+            // 其他依赖
+            fresco             : 'com.facebook.fresco:fresco:0.12.0',
+            // 支持 GIF 动图，需要添加
+            fresco_gif            : 'com.facebook.fresco:animated-gif:0.12.0',
+
+            // 支持 WebP （静态图+动图），需要添加
+            fresco_webp_animated: 'com.facebook.fresco:animated-webp:0.12.0',
+            fresco_webp_static  : 'com.facebook.fresco:webpsupport:0.12.0'
+
+    ]
+    anko_dependencies=[
+            anko                :  "org.jetbrains.anko:anko:$anko_version"
+    ]
+
+    quickbox = [
+            quick_chat        : "com.quickblox:quickblox-android-sdk-chat:$qbSdkVersion",
+            quick_rtc         : "com.quickblox:quickblox-android-sdk-videochat-webrtc:$qbSdkVersion"
+    ]
+}

@@ -5,13 +5,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion rootProject.compileSdkVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "com.zcp.mapshow"
-        minSdkVersion 19
-        targetSdkVersion rootProject.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         manifestPlaceholders = [
@@ -80,6 +80,10 @@ android {
     }
     //use legacy for android 6.0
     useLibrary 'org.apache.http.legacy'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 configurations {
     all*.exclude group: 'android.support.v4', module: 'support-v4'
@@ -101,18 +105,12 @@ dependencies {
     testImplementation system_dependencies.test_junit
     androidTestImplementation system_dependencies.android_test_runner
     androidTestImplementation system_dependencies.android_test_espresso
-    //    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    //  implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    //    testImplementation 'junit:junit:4.12'
-    //    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //baidu map sdk
     implementation files('libs/IndoorscapeAlbumPlugin.jar')
     implementation files('libs/httpmime-4.1.2.jar')
     implementation files('libs/BaiduLBS_Android.jar')
     def im_dependencies = rootProject.ext.im_dependencies
-//    implementation im_dependencies.gms_google
-//    implementation im_dependencies.hyphenate_sdk
+
     def funiction_dependencies = rootProject.ext.function_dependencies
     implementation funiction_dependencies.okhttp
 //    implementation funiction_dependencies.rxjava2
@@ -131,9 +129,14 @@ dependencies {
     implementation anko_dependencies.anko
     implementation files('libs/hyphenatechat_3.4.0.1.jar')
 
-    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-core:16.0.5'
     implementation 'com.google.firebase:firebase-iid:17.0.4'
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
     implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
+
+    def quickbox = rootProject.ext.quickbox
+    implementation quickbox.quick_chat
+    implementation quickbox.quick_rtc
+    implementation(project(":sample-core"))
 }
 apply plugin: 'com.google.gms.google-services'

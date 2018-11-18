@@ -13,7 +13,7 @@ class HomeActivity : BaseActivity() {
     override fun initview() {
         val token = FirebaseInstanceId.getInstance().getToken()
         toast("is$token")
-        Log.e("token",token)
+        Log.e("token",token+"error")
         FirebaseMessaging.getInstance().subscribeToTopic("MapShow").addOnCompleteListener({
 //            toast(FirebaseMessaging.INSTANCE_ID_SCOPE)
         })
